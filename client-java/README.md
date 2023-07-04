@@ -27,7 +27,7 @@ customObjectsApi: 針對特定CRD內部CR的CRUD操作API
 啟動Controller的同時，使用extensionsV1Api事先新增指定的CRD
 以供後續在這個CRD中加入CR。
 
-※ 其中[V1alpha1AtCrd](https://github.com/benson-chiu/k8s-client-java/blob/master/client-java/src/main/java/com/k8s/crds/V1alpha1AtCrd.java "V1alpha1AtCrd")內容為定義CRD [yaml檔案](https://github.com/charleschou56/kubesphere/blob/controller-dev-k8s/config/crds/cnat.programming-kubernetes.info_ats.yaml "yaml檔案")轉換成client-java body的實例。
+※ 其中[V1alpha1AtCrd](https://github.com/ECPaaS/k8s-client-x/blob/main/client-java/src/main/java/com/k8s/crds/V1alpha1AtCrd.java "V1alpha1AtCrd")內容為定義CRD [yaml檔案](https://github.com/charleschou56/kubesphere/blob/controller-dev-k8s/config/crds/cnat.programming-kubernetes.info_ats.yaml "yaml檔案")轉換成client-java body的實例。
 ![][create-crd]
 
 另外在Controller關閉前，使用extensionsV1Api來將指定CRD進行刪除動作，這個操作會將裡面的CR一併刪除。
@@ -115,40 +115,40 @@ reconcile裡拿到at這個CR之後會將裡面的phase狀態初始化為”PENDI
 ![][kubectl]
 
 
-[api]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/api.jpg
+[api]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/api.jpg
 
-[controller]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/controller.jpg
+[controller]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/controller.jpg
 
-[cr-informer-event]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/cr-informer-event.jpg
+[cr-informer-event]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/cr-informer-event.jpg
 
-[crd-model]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/crd-model.jpg
+[crd-model]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/crd-model.jpg
 
-[create-cr]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/create-cr.jpg
+[create-cr]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/create-cr.jpg
 
-[create-crd]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/create-crd.jpg
+[create-crd]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/create-crd.jpg
 
-[create-informer]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/create-informer.jpg
+[create-informer]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/create-informer.jpg
 
-[create-pod]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/create-pod.jpg
+[create-pod]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/create-pod.jpg
 
-[delete-crd]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/delete-crd.jpg
+[delete-crd]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/delete-crd.jpg
 
-[github-action-summary]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/github-action-summary.jpg
+[github-action-summary]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/github-action-summary.jpg
 
-[github-action]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/github-action.jpg
+[github-action]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/github-action.jpg
 
-[kubectl]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/kubectl.jpg
+[kubectl]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/kubectl.jpg
 
-[pending-state]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/pending-state.jpg
+[pending-state]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/pending-state.jpg
 
-[pod-informer-event]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/pod-informer-event.jpg
+[pod-informer-event]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/pod-informer-event.jpg
 
-[reconciler-class]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/reconciler-class.jpg
+[reconciler-class]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/reconciler-class.jpg
 
-[reconciler-function]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/reconciler-function.jpg
+[reconciler-function]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/reconciler-function.jpg
 
-[run-controller]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/run-controller.jpg
+[run-controller]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/run-controller.jpg
 
-[running-state]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/running-state.jpg
+[running-state]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/running-state.jpg
 
-[timeUntilSchedule]: https://raw.githubusercontent.com/benson-chiu/k8s-client-java/master/client-java/images/timeUntilSchedule.jpg
+[timeUntilSchedule]: https://raw.githubusercontent.com/ECPaaS/k8s-client-x/main/client-java/images/timeUntilSchedule.jpg
