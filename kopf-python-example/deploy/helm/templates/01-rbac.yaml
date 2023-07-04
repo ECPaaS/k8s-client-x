@@ -1,0 +1,33 @@
+### make default account of dev pod able to access k8s resource
+###
+
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: dev-admin
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/resource-policy": keep
+    "helm.sh/hook-weight": "-5"
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: dev-patch
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/resource-policy": keep
+    "helm.sh/hook-weight": "-4"
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: {{ .Release.Namespace }}
+roleRef:
+  kind: ClusterRole
+  name: dev-admin
+  apiGroup: rbac.authorization.k8s.io
+

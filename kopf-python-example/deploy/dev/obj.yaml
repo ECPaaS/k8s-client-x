@@ -1,0 +1,12 @@
+apiVersion: frrcontroller.nocsys.cn/v1alpha1
+kind: Frr
+metadata:
+  name: example-frr
+  namespace: sq-test
+spec:
+  deploymentName: example-foo
+  replicas: 1
+  image: quay.io/frrouting/frr:8.5.1
+  asNumber: 65001
+  neighbor:
+  - 192.168.40.32
