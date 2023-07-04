@@ -27,7 +27,7 @@ customObjectsApi: 針對特定CRD內部CR的CRUD操作API
 啟動Controller的同時，使用extensionsV1Api事先新增指定的CRD
 以供後續在這個CRD中加入CR。
 
-※ 其中[V1alpha1AtCrd](https://github.com/ECPaaS/k8s-client-x/blob/main/client-java/src/main/java/com/k8s/crds/V1alpha1AtCrd.java "V1alpha1AtCrd")內容為定義CRD [yaml檔案](https://github.com/charleschou56/kubesphere/blob/controller-dev-k8s/config/crds/cnat.programming-kubernetes.info_ats.yaml "yaml檔案")轉換成client-java body的實例。
+※ 其中[V1alpha1AtCrd](https://github.com/ECPaaS/k8s-client-x/blob/main/client-java/src/main/java/com/k8s/crds/V1alpha1AtCrd.java "V1alpha1AtCrd")內容為定義CRD [yaml檔案](https://github.com/ECPaaS/k8s-client-x/blob/main/client-java/src/main/java/com/k8s/crds/cnat.programming-kubernetes.info_ats.yaml "yaml檔案")轉換成client-java body的實例。
 ![][create-crd]
 
 另外在Controller關閉前，使用extensionsV1Api來將指定CRD進行刪除動作，這個操作會將裡面的CR一併刪除。
@@ -104,14 +104,14 @@ reconcile裡拿到at這個CR之後會將裡面的phase狀態初始化為”PENDI
 ![][running-state]
 
 ## 測試client-java controller
-使用maven安裝client-java依賴的module(參考此pom.xml檔案)並編譯client-java controller<br>
+使用maven安裝client-java依賴的module(請參考pom.xml檔案)並編譯client-java controller<br>
 `mvn clean install` <br>
 編譯完成後執行以下command來啟動client-java controller <br>
 `mvn exec:java -D exec.mainClass=com.k8s.ControllerExample -D exec.cleanupDaemonThreads=false` <br>
 
 ![][run-controller]
 
-可透過中看到CRD、CR以及關聯的Pod以建立完成。<br>
+可透過kubectl中看到CRD、CR以及關聯的Pod以建立完成。<br>
 ![][kubectl]
 
 
